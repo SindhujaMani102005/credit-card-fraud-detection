@@ -1,0 +1,308 @@
+/* style.css - Enhanced UI for FraudShield with Glassmorphism & Animations */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  /* Enable smoother font rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navbar */
+.navbar {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar:hover {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.15);
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #007bff !important;
+  text-shadow: 0 1px 3px rgba(0, 123, 255, 0.6);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #0056b3 !important;
+  text-shadow: 0 2px 8px rgba(0, 86, 179, 0.8);
+}
+
+.nav-link {
+  font-weight: 500;
+  color: #333;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #007bff;
+  transform: scale(1.05);
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #007bffcc 0%, #6610f2cc 100%);
+  color: white;
+  padding: 4rem 1rem;
+  text-align: center;
+  border-radius: 0 0 50% 50% / 15%;
+  box-shadow: 0 8px 30px rgba(0, 123, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 70%);
+  animation: slowRotate 20s linear infinite;
+  z-index: 0;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+  animation: slideInDown 0.8s ease forwards;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  max-width: 650px;
+  margin: 1rem auto 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* Custom Button Enhancements */
+.btn {
+  font-size: 1rem;
+  border-radius: 50px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+  background: rgba(0, 123, 255, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 123, 255, 0.5);
+  color: white;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent 70%);
+  transform: scale(0);
+  transition: transform 0.4s ease;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.btn:hover::before {
+  transform: scale(1);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.5);
+  background: rgba(0, 123, 255, 0.5);
+  border-color: rgba(0, 123, 255, 0.8);
+  color: white;
+  z-index: 1;
+}
+
+/* Table Styling */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin-top: 1rem;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 1s ease forwards;
+}
+
+table th, table td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.75rem;
+  text-align: center;
+  color: #222;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+table thead {
+  background: rgba(0, 123, 255, 0.6);
+  color: white;
+  text-shadow: none;
+}
+
+/* Cards & Containers */
+.container, .card {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  transition: box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.container:hover, .card:hover {
+  box-shadow: 0 12px 40px rgba(0, 123, 255, 0.25);
+}
+
+/* Footer */
+footer {
+  background: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  color: #888;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* Modals */
+.modal-content {
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  animation: fadeInScale 0.5s ease forwards;
+}
+
+.modal-title {
+  font-weight: bold;
+  color: #007bff;
+  text-shadow: 0 1px 2px rgba(0, 123, 255, 0.7);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 576px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.4rem;
+  }
+}
+
+/* Charts */
+.charts img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* Flagged Transactions */
+.flagged-list li {
+  color: #dc3545;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  list-style: none;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slowRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

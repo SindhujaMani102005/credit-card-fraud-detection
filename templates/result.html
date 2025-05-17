@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detection Results - FraudShield</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body { background: #f5f7fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    .container { max-width: 900px; margin: 4rem auto; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+    h2 { font-weight: 700; color: #dc3545; }
+    table { width: 100%; }
+    .btn-group { margin-top: 1.5rem; }
+    .btn { min-width: 150px; }
+    .no-data { font-style: italic; color: #666; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="/">FraudShield</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavResult" aria-controls="navbarNavResult" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavResult">
+      <ul class="navbar-nav ms-auto fs-5">
+        <li class="nav-item"><a class="nav-link" href="/upload"><i class="fa-solid fa-upload me-1"></i>Upload</a></li>
+        <li class="nav-item"><a class="nav-link" href="/simulate"><i class="fa-solid fa-play-circle me-1"></i>Simulate</a></li>
+        <li class="nav-item"><a class="nav-link" href="/dashboard"><i class="fa-solid fa-chart-line me-1"></i>Dashboard</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <h2>🚨 Fraudulent Transactions Detected</h2>
+
+  {% if tables %}
+  <div class="table-responsive">
+    {{ tables[0]|safe }}
+  </div>
+  {% else %}
+  <p class="no-data">No fraudulent transactions detected in the uploaded file.</p>
+  {% endif %}
+
+  <div class="btn-group d-flex justify-content-center">
+    <a href="/dashboard" class="btn btn-success me-3"><i class="fa-solid fa-chart-pie me-1"></i> View Dashboard</a>
+    <a href="/" class="btn btn-secondary"><i class="fa-solid fa-house me-1"></i> Home</a>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
